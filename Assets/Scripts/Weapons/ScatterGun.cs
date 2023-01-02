@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScatterGun : MonoBehaviour
+[CreateAssetMenu(fileName = "ScatterGun", menuName = "ScriptableObjects/ScatterGun")]
+public class ScatterGun : Weapon
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Fire(Player p)
     {
-        
+        GameObject laser1 = Instantiate(projectile, p.transform.position, p.transform.rotation);
+        GameObject laser2 = Instantiate(projectile, p.transform.position, p.transform.rotation);
+        GameObject laser3 = Instantiate(projectile, p.transform.position, p.transform.rotation);
+        laser1.GetComponent<LaserShot>().SetDirection(p.GetDirectionWithFixedOffset(15));
+        laser2.GetComponent<LaserShot>().SetDirection(p.GetDirectionWithFixedOffset(-15));
+        laser3.GetComponent<LaserShot>().SetDirection(p.GetDirection());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

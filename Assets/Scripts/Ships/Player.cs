@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -9,27 +10,34 @@ public class Player : MonoBehaviour
     [SerializeField] private float maxVelocity;
     [SerializeField] private float fireDelay;
     [SerializeField] private float health;
+    [SerializeField] private float maxHealth;
 
     [SerializeField] private new GameObject camera;
-    [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject explosion;
     [SerializeField] private GameObject enemyArrow;
+    [SerializeField] private Weapon primaryWeapon;
 
     private List<GameObject> enemyArrows;
 
-    private bool canFire = true;
+    [SerializeField] private bool canFire = true;
     
     private new Rigidbody2D rigidbody;
+    private Slider hpSlider;
 
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
         enemyArrows = new List<GameObject>();
+        hpSlider = GameObject.FindGameObjectWithTag("HP").GetComponent<Slider>();
     }
 
     void Start()
     {
         SpawnArrows();
+
+        hpSlider.maxValue = maxHealth;
+        hpSlider.minValue = 0;
+        hpSlider.value = health;
     }
 
     void Update()
@@ -88,7 +96,7 @@ public class Player : MonoBehaviour
         {
             if (canFire)
             {
-                StartCoroutine(FireLaser());
+                StartCoroutine(FirePrimary());
                 canFire = false;
             }
         }
@@ -103,17 +111,27 @@ public class Player : MonoBehaviour
         }
     }
 
-    IEnumerator FireLaser()
+    IEnumerator FirePrimary()
     {
-        GameObject laser = Instantiate(projectile, transform.position, transform.rotation);
-        laser.GetComponent<LaserShot>().SetDirection(GetDirection());
-        yield return new WaitForSeconds(fireDelay);
+        primaryWeapon.Fire(this);
+        yield return new WaitForSeconds(primaryWeapon.GetFireDelay());
         canFire = true;
     }
 
-    Vector3 GetDirection()
+    public Vector3 GetDirection()
     {
         float radians = (transform.eulerAngles.z + 90) * Mathf.Deg2Rad;
+
+        float x = Mathf.Cos(radians);
+        float y = Mathf.Sin(radians);
+
+        Vector3 direction = new Vector3(x, y, 0).normalized;
+        return direction;
+    }
+
+    public Vector3 GetDirectionWithFixedOffset(int degrees)
+    {
+        float radians = (transform.eulerAngles.z + 90 + degrees) * Mathf.Deg2Rad;
 
         float x = Mathf.Cos(radians);
         float y = Mathf.Sin(radians);
@@ -125,5 +143,6 @@ public class Player : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+        hpSlider.value = health;
     }
 }

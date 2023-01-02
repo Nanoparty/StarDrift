@@ -13,11 +13,15 @@ public class MapManager : MonoBehaviour
 
     private GameObject currentPlanet;
 
+    private GameObject[] planetNodes;
+
     private void Start()
     {
         if (planets == null) planets = new List<GameObject>();
         if (nextPlanets == null) nextPlanets = new List<GameObject>();
         if (visitedPlanets == null) visitedPlanets = new List<GameObject>();
+
+        planetNodes = GameObject.FindGameObjectsWithTag("Node");
 
         if (currentPlanet == null)
         {

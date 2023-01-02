@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlanetData : MonoBehaviour
@@ -38,7 +39,7 @@ public class PlanetData : MonoBehaviour
     public GameObject GetRandomPlanet()
     {
         GameObject Planet = null;
-        int random = Random.Range(0, 17);
+        int random = UnityEngine.Random.Range(0, 17);
         if (random == 0) Planet = Terra_1;
         if (random == 1) Planet = Terra_2;
         if (random == 2) Planet = Barren_1;
@@ -56,6 +57,59 @@ public class PlanetData : MonoBehaviour
         if (random == 14) Planet = Lava_3;
         if (random == 15) Planet = Forest;
         if (random == 16) Planet = Jungle;
+
+        if (Planet == null) Planet = Terra_1;
+        return Planet;
+    }
+
+    public enum PlanetType
+    {
+        Terra1,
+        Terra2,
+        Barren1,
+        Barren2,
+        Barren3,
+        Barren4,
+        Ice,
+        Ocean,
+        Gas1,
+        Gas2,
+        Gas3,
+        Gas4,
+        Lava1,
+        Lava2,
+        Lava3,
+        Forest,
+        Jungle
+    }
+
+    public PlanetType GetRandomPlanetType()
+    {
+        Array values = Enum.GetValues(typeof(PlanetType));
+        PlanetType type = (PlanetType)values.GetValue(UnityEngine.Random.Range(0,values.Length));
+        return type;
+    }
+
+    public GameObject GetPlanetPrefab(PlanetType type)
+    {
+        GameObject Planet = null;
+        if (type == PlanetType.Terra1) Planet = Terra_1;
+        if (type == PlanetType.Terra2) Planet = Terra_2;
+        if (type == PlanetType.Barren1) Planet = Barren_1;
+        if (type == PlanetType.Barren2) Planet = Barren_2;
+        if (type == PlanetType.Barren3) Planet = Barren_3;
+        if (type == PlanetType.Barren4) Planet = Barren_4;
+        if (type == PlanetType.Ice) Planet = Ice;
+        if (type == PlanetType.Ocean) Planet = Ocean;
+        if (type == PlanetType.Gas1) Planet = Gas_1;
+        if (type == PlanetType.Gas2) Planet = Gas_2;
+        if (type == PlanetType.Gas3) Planet = Gas_3;
+        if (type == PlanetType.Gas4) Planet = Gas_4;
+        if (type == PlanetType.Lava1) Planet = Lava_1;
+        if (type == PlanetType.Lava2) Planet = Lava_2;
+        if (type == PlanetType.Lava3) Planet = Lava_3;
+        if (type == PlanetType.Forest) Planet = Forest;
+        if (type == PlanetType.Jungle) Planet = Jungle;
 
         if (Planet == null) Planet = Terra_1;
         return Planet;

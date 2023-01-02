@@ -2,13 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Weapon
+public class Weapon : ScriptableObject
 {
     [SerializeField] protected Sprite Icon;
     [SerializeField] protected float fireDelay;
     [SerializeField] protected GameObject projectile;
 
-    protected bool canFire;
+    public virtual void Fire(Player p) {
+        Debug.Log("Fire Defalt");
+    }
 
-    public abstract void Fire();
+    public float GetFireDelay()
+    {
+        return fireDelay;
+    }
+
+    public Sprite GetIcon()
+    {
+        return Icon;
+    }
 }

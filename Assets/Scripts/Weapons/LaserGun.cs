@@ -2,22 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "LaserGun", menuName = "ScriptableObjects/LaserGun")]
 public class LaserGun : Weapon
 {
-    public override void Fire()
+    public override void Fire(Player p)
     {
-        if (canFire)
-        {
-            //StartCoroutine(FireLaser());
-            canFire = false;
-        }
+        Debug.Log("Fire");
+        GameObject laser = Instantiate(projectile, p.transform.position, p.transform.rotation);
+        laser.GetComponent<LaserShot>().SetDirection(p.GetDirection());
     }
-
-    protected IEnumerator SpawnProjectiles()
-    {
-        yield return new WaitForSeconds(fireDelay);
-        canFire = true;
-    }
-
     
 }
