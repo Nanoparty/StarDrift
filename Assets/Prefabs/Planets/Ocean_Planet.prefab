@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3294285486289218830}
   - component: {fileID: 3294285486289218831}
-  - component: {fileID: 3294285486289218824}
+  - component: {fileID: -8489353638435267296}
   m_Layer: 0
   m_Name: Ocean_Planet
   m_TagString: Untagged
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1154916359
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b6fda727984994ee8a6c14eecff646ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &3294285486289218824
+--- !u!95 &-8489353638435267296
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7486259871889419869}
   - component: {fileID: 7486259871889419866}
-  - component: {fileID: 7486259871889419867}
+  - component: {fileID: -883945334682354597}
   m_Layer: 0
   m_Name: Barren_Planet_3
   m_TagString: Untagged
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1154916359
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 238f9d35bc28446729249600860ff379, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &7486259871889419867
+--- !u!95 &-883945334682354597
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0

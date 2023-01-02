@@ -48,6 +48,12 @@ TagManager:
   - name: Stars
     uniqueID: 1562202377
     locked: 0
+  - name: Map Lines
+    uniqueID: 1447914001
+    locked: 0
+  - name: Background Objects
+    uniqueID: 2080473413
+    locked: 0
   - name: Planets
     uniqueID: 3140050937
     locked: 0

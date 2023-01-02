@@ -15,13 +15,20 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject explosion;
     [SerializeField] private GameObject enemyArrow;
 
+    private List<GameObject> enemyArrows;
+
     private bool canFire = true;
     
     private new Rigidbody2D rigidbody;
 
-    void Start()
+    private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+        enemyArrows = new List<GameObject>();
+    }
+
+    void Start()
+    {
         SpawnArrows();
     }
 
@@ -37,14 +44,21 @@ public class Player : MonoBehaviour
         camera.transform.position = new Vector3(transform.position.x, transform.position.y, -10);
     }
 
-    void SpawnArrows()
+    public void SpawnArrows()
     {
+        foreach (GameObject o in enemyArrows)
+        {
+            Destroy(o);
+        }
+        enemyArrows.Clear();
+
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach(GameObject e in enemies)
         {
             GameObject arrow = Instantiate(enemyArrow, transform.position, Quaternion.identity);
             arrow.transform.parent = transform;
             arrow.GetComponent<EnemyTracker>().SetEnemy(e);
+            enemyArrows.Add(arrow);
         }
     }
 

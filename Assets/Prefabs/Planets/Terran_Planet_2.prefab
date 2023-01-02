@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1367614452013511408}
   - component: {fileID: 1367614452013511411}
-  - component: {fileID: 1367614452013511410}
+  - component: {fileID: -4830404493944349631}
   m_Layer: 0
   m_Name: Terran_Planet_2
   m_TagString: Untagged
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1154916359
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 48f2a8a46cc4342f79411a34e5c6a1bb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &1367614452013511410
+--- !u!95 &-4830404493944349631
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0

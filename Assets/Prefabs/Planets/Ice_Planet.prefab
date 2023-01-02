@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7286377453884120206}
   - component: {fileID: 7286377453884120201}
-  - component: {fileID: 7286377453884120200}
+  - component: {fileID: -4965185198155484989}
   m_Layer: 0
   m_Name: Ice_Planet
   m_TagString: Untagged
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1154916359
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 97395c044c1fb44ff84b32e211db9ce7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &7286377453884120200
+--- !u!95 &-4965185198155484989
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0

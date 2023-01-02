@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7677824284872877640}
   - component: {fileID: 7677824284872877643}
-  - component: {fileID: 7677824284872877642}
+  - component: {fileID: 6498390430080197139}
   m_Layer: 0
   m_Name: Lava_Planet_1
   m_TagString: Untagged
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1154916359
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0029116309cca423ebb4a375d370d15e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &7677824284872877642
+--- !u!95 &6498390430080197139
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0

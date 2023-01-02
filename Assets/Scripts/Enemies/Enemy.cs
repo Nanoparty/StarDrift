@@ -65,7 +65,7 @@ public class Enemy : MonoBehaviour
             rigidbody.AddForceAtPosition(direction2 * movementSpeed * Time.deltaTime, transform.position);
         }
 
-        Debug.Log("Target Angle:" + angle + "\nCurrent Angle:" + transform.eulerAngles.z);
+        //Debug.Log("Target Angle:" + angle + "\nCurrent Angle:" + transform.eulerAngles.z);
     }
 
     void FireLaser()
