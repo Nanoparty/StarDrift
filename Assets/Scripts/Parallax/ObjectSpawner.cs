@@ -27,6 +27,8 @@ public class ObjectSpawner : MonoBehaviour
     [SerializeField] private List<GameObject> Comets;
     [SerializeField] private List<GameObject> Tech;
 
+    [SerializeField] private GameObject DefaultPlanet;
+
     private void Start()
     {
         SpawnPlanet();
@@ -44,7 +46,7 @@ public class ObjectSpawner : MonoBehaviour
 
     private void SpawnPlanet()
     {
-        GameObject planetPrefab = Data.PlanetPrefab ?? PlanetData.pd.Terra_1;
+        GameObject planetPrefab = Data.PlanetPrefab ?? DefaultPlanet;
         GameObject planet = Instantiate(planetPrefab, Vector3.zero, Quaternion.identity);
         planet.transform.parent = PlanetTransform;
         planet.transform.localPosition = Vector3.zero;

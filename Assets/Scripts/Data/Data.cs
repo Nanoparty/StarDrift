@@ -8,9 +8,13 @@ public static class Data
     public static int numEnemies;
 
     public static List<GameObject> planets;
-    public static List<GameObject> visitedPlanets;
-    public static List<GameObject> nextPlanets;
-    public static GameObject currentPlanet;
+    public static List<int> visitedPlanets;
+    public static List<int> nextPlanets;
+    public static int currentPlanet = -1;
 
     public static bool loadData = false;
+
+    public static List<PlanetData> planetData;
+
+    public static long seed;
 }
