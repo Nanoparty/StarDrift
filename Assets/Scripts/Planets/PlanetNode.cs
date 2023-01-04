@@ -100,7 +100,14 @@ public class PlanetNode : MonoBehaviour
         Data.PlanetPrefab = mapManager.GetPlanetPrefab(planetData.type);
         Data.numEnemies = planetData.numEnemies;
         mapManager.SaveNodes();
-        SceneManager.LoadScene("Main", LoadSceneMode.Single);
+        if (Boss)
+        {
+            SceneManager.LoadScene("Boss", LoadSceneMode.Single);
+        }
+        else
+        {
+            SceneManager.LoadScene("Main", LoadSceneMode.Single);
+        }
     }
 
     private void CloseInfo()
