@@ -10,6 +10,8 @@ public class CombatManager : MonoBehaviour
     [SerializeField] private GameObject RewardCard;
     [SerializeField] private GameObject UI;
 
+    [SerializeField] private bool isBoss;
+
     private GameObject rewards;
 
     private void Start()
@@ -19,6 +21,11 @@ public class CombatManager : MonoBehaviour
 
     private void Update()
     {
+        if (isBoss)
+        {
+            return;
+        }
+
         if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
         {
             Debug.Log("All Enemies Dead");

@@ -31,6 +31,11 @@ public class Projectile : MonoBehaviour
                 collision.GetComponent<Enemy>().TakeDamage(damage);
             }
 
+            if (collision.GetComponent<Boss1>() != null)
+            {
+                collision.GetComponent<Boss1>().TakeDamage(damage);
+            }
+
             if (collision.GetComponent<Player>() != null)
             {
                 collision.GetComponent<Player>().TakeDamage(damage);

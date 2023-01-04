@@ -23,7 +23,7 @@ public class MenuManager : MonoBehaviour
 
     private void NewListener()
     {
-        SceneManager.LoadScene("Map", LoadSceneMode.Single);
+        SceneManager.LoadScene("Hangar", LoadSceneMode.Single);
     }
 
     private void LoadListener()

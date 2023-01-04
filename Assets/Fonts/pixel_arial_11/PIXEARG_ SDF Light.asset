@@ -104,7 +104,7 @@ Material:
     - _ReflectFaceColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
-    - _UnderlayColor: {r: 0, g: 0, b: 0, a: 0.39607844}
+    - _UnderlayColor: {r: 1, g: 1, b: 1, a: 0.39607844}
   m_BuildTextureStacks: []
 --- !u!114 &11400000
 MonoBehaviour:
@@ -116,11 +116,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: PIXEARG_ SDF
+  m_Name: PIXEARG_ SDF Light
   m_EditorClassIdentifier: 
-  hashCode: -1508772418
+  hashCode: -2047884000
   material: {fileID: -5978027640910496942}
-  materialHashCode: 734657502
+  materialHashCode: -206601472
   m_Version: 1.1.0
   m_SourceFontFileGUID: 4752062d840eb45c9812fb226c76d7ab
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 4752062d840eb45c9812fb226c76d7ab, type: 3}

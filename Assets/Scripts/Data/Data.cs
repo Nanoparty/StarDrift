@@ -17,4 +17,11 @@ public static class Data
     public static List<PlanetData> planetData;
 
     public static long seed;
+
+    public static long sessionTime = 100;
+    public static int enemiesKilled = 11;
+    public static int damageTaken = 5;
+    public static int damageDealt = 20;
+    public static int suppliesCollected = 7;
+    public static int upgradesCollected = 2;
 }

@@ -59,6 +59,12 @@ TagManager:
   - name: Planets
     uniqueID: 3140050937
     locked: 0
+  - name: Enemy
+    uniqueID: 427688055
+    locked: 0
+  - name: Turret
+    uniqueID: 956993095
+    locked: 0
   - name: Ship
     uniqueID: 3986932239
     locked: 0
