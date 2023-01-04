@@ -31,6 +31,24 @@ public class MapManager : MonoBehaviour
     public GameObject Forest;
     public GameObject Jungle;
 
+    public Sprite Terra_1_sprite;
+    public Sprite Terra_2_sprite;
+    public Sprite Barren_1_sprite;
+    public Sprite Barren_2_sprite;
+    public Sprite Barren_3_sprite;
+    public Sprite Barren_4_sprite;
+    public Sprite Ice_sprite;
+    public Sprite Ocean_sprite;
+    public Sprite Gas_1_sprite;
+    public Sprite Gas_2_sprite;
+    public Sprite Gas_3_sprite;
+    public Sprite Gas_4_sprite;
+    public Sprite Lava_1_sprite;
+    public Sprite Lava_2_sprite;
+    public Sprite Lava_3_sprite;
+    public Sprite Forest_sprite;
+    public Sprite Jungle_sprite;
+
     public bool InfoOpen = false;
 
     private int currentPlanet;
@@ -66,6 +84,7 @@ public class MapManager : MonoBehaviour
         {
             System.Array values = System.Enum.GetValues(typeof(PlanetType));
             PlanetType type = (PlanetType)values.GetValue(Random.Range(0, values.Length));
+            
             planetData.Add(new PlanetData(i, type));
         }
 
@@ -181,6 +200,56 @@ public class MapManager : MonoBehaviour
         if (type == PlanetType.Jungle) Planet = Jungle;
 
         if (Planet == null) Planet = Terra_1;
+        return Planet;
+    }
+
+    public Sprite GetPlanetSprite(PlanetType type)
+    {
+        Sprite Planet = null;
+        if (type == PlanetType.Terra1) Planet = Terra_1_sprite;
+        if (type == PlanetType.Terra2) Planet = Terra_2_sprite;
+        if (type == PlanetType.Barren1) Planet = Barren_1_sprite;
+        if (type == PlanetType.Barren2) Planet = Barren_2_sprite;
+        if (type == PlanetType.Barren3) Planet = Barren_3_sprite;
+        if (type == PlanetType.Barren4) Planet = Barren_4_sprite;
+        if (type == PlanetType.Ice) Planet = Ice_sprite;
+        if (type == PlanetType.Ocean) Planet = Ocean_sprite;
+        if (type == PlanetType.Gas1) Planet = Gas_1_sprite;
+        if (type == PlanetType.Gas2) Planet = Gas_2_sprite;
+        if (type == PlanetType.Gas3) Planet = Gas_3_sprite;
+        if (type == PlanetType.Gas4) Planet = Gas_4_sprite;
+        if (type == PlanetType.Lava1) Planet = Lava_1_sprite;
+        if (type == PlanetType.Lava2) Planet = Lava_2_sprite;
+        if (type == PlanetType.Lava3) Planet = Lava_3_sprite;
+        if (type == PlanetType.Forest) Planet = Forest_sprite;
+        if (type == PlanetType.Jungle) Planet = Jungle_sprite;
+
+        if (Planet == null) Planet = Terra_1_sprite;
+        return Planet;
+    }
+
+    public string GetPlanetEnvironment(PlanetType type)
+    {
+        string Planet = "";
+        if (type == PlanetType.Terra1) Planet = "Terran";
+        if (type == PlanetType.Terra2) Planet = "Dead Terran";
+        if (type == PlanetType.Barren1) Planet = "Barren";
+        if (type == PlanetType.Barren2) Planet = "Barren";
+        if (type == PlanetType.Barren3) Planet = "Barren";
+        if (type == PlanetType.Barren4) Planet = "Barren";
+        if (type == PlanetType.Ice) Planet = "Tundra";
+        if (type == PlanetType.Ocean) Planet = "Oceanic";
+        if (type == PlanetType.Gas1) Planet = "Gas Giant";
+        if (type == PlanetType.Gas2) Planet = "Gas Giant";
+        if (type == PlanetType.Gas3) Planet = "Gas Giant";
+        if (type == PlanetType.Gas4) Planet = "Gas Giant";
+        if (type == PlanetType.Lava1) Planet = "Volcanic";
+        if (type == PlanetType.Lava2) Planet = "Volcanic";
+        if (type == PlanetType.Lava3) Planet = "Volcanic";
+        if (type == PlanetType.Forest) Planet = "Temporate Forest";
+        if (type == PlanetType.Jungle) Planet = "Tropical Forest";
+
+        if (Planet == null) Planet = "Unknown";
         return Planet;
     }
 

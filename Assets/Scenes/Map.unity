@@ -330,7 +330,7 @@ PrefabInstance:
       objectReference: {fileID: 441632879}
     - target: {fileID: 8373663314258359110, guid: 6f4efee39bcb44488bd5e30e2323d803, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8373663314258359110, guid: 6f4efee39bcb44488bd5e30e2323d803, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1226,7 +1226,7 @@ PrefabInstance:
       objectReference: {fileID: 441632879}
     - target: {fileID: 8373663314258359110, guid: 6f4efee39bcb44488bd5e30e2323d803, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8373663314258359110, guid: 6f4efee39bcb44488bd5e30e2323d803, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2428,7 +2428,7 @@ PrefabInstance:
     - target: {fileID: 7267353678213449988, guid: 6f4efee39bcb44488bd5e30e2323d803, type: 3}
       propertyPath: NextPlanets.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1211563682}
     - target: {fileID: 7267353678213449988, guid: 6f4efee39bcb44488bd5e30e2323d803, type: 3}
       propertyPath: NextPlanets.Array.data[1]
       value: 
@@ -2693,7 +2693,7 @@ PrefabInstance:
       objectReference: {fileID: 315097346}
     - target: {fileID: 8373663314258359110, guid: 6f4efee39bcb44488bd5e30e2323d803, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8373663314258359110, guid: 6f4efee39bcb44488bd5e30e2323d803, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2843,6 +2843,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7267353678213449988, guid: 6f4efee39bcb44488bd5e30e2323d803, type: 3}
+      propertyPath: Boss
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7267353678213449988, guid: 6f4efee39bcb44488bd5e30e2323d803, type: 3}
       propertyPath: InfoParent
       value: 
       objectReference: {fileID: 1112023944}
@@ -2852,7 +2856,7 @@ PrefabInstance:
       objectReference: {fileID: 1209000768394100376, guid: 4e49d55c5f5184ece9e5e43429634fb3, type: 3}
     - target: {fileID: 8373663314258359110, guid: 6f4efee39bcb44488bd5e30e2323d803, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8373663314258359110, guid: 6f4efee39bcb44488bd5e30e2323d803, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2964,8 +2968,8 @@ MonoBehaviour:
   - {fileID: 192695779}
   - {fileID: 315097346}
   - {fileID: 978365305}
-  nextPlanets: []
-  visitedPlanets: []
+  nextPlanets: 
+  visitedPlanets: 
   firstPlanet: {fileID: 780202884}
   Terra_1: {fileID: 7828517137707740217, guid: 980c5961f0e1a4c9b816bc1e2141a478, type: 3}
   Terra_2: {fileID: 1367614452013511413, guid: d63a6aab19b5849549d28c4be88576bc, type: 3}
@@ -2984,6 +2988,23 @@ MonoBehaviour:
   Lava_3: {fileID: 5220191088101473403, guid: a975e6bd2f0fc4ff0b2b6feacd3d0a25, type: 3}
   Forest: {fileID: 1742033635573676662, guid: 6cbe6e565c6b84b58a50bafc4098dadb, type: 3}
   Jungle: {fileID: 8979758892875207944, guid: 57602eff985b545b7822c7b1d871c90c, type: 3}
+  Terra_1_sprite: {fileID: 21300000, guid: 925753884443b4ea880c71b94fa14cea, type: 3}
+  Terra_2_sprite: {fileID: 21300000, guid: 48f2a8a46cc4342f79411a34e5c6a1bb, type: 3}
+  Barren_1_sprite: {fileID: 21300000, guid: 8d7d199ccd3764891a0a9f0558163504, type: 3}
+  Barren_2_sprite: {fileID: 21300000, guid: fca1c156b871b4cf3a019dc42317e11c, type: 3}
+  Barren_3_sprite: {fileID: 21300000, guid: 238f9d35bc28446729249600860ff379, type: 3}
+  Barren_4_sprite: {fileID: 21300000, guid: 486dc734853484292a25e8711e006c83, type: 3}
+  Ice_sprite: {fileID: 21300000, guid: 97395c044c1fb44ff84b32e211db9ce7, type: 3}
+  Ocean_sprite: {fileID: 21300000, guid: b6fda727984994ee8a6c14eecff646ca, type: 3}
+  Gas_1_sprite: {fileID: 21300000, guid: 6a87ddd4691374fefb373d5281937769, type: 3}
+  Gas_2_sprite: {fileID: 21300000, guid: 29901c71f12dd4ba29393d0d7761eea1, type: 3}
+  Gas_3_sprite: {fileID: 21300000, guid: d0eecb1a93c1f4b53b9fa3933df74d92, type: 3}
+  Gas_4_sprite: {fileID: 21300000, guid: 8b7140036eac4451dae904dfef19c8f2, type: 3}
+  Lava_1_sprite: {fileID: 21300000, guid: 0029116309cca423ebb4a375d370d15e, type: 3}
+  Lava_2_sprite: {fileID: 21300000, guid: f560baa2fdf0642aaa61835c3c25f918, type: 3}
+  Lava_3_sprite: {fileID: 21300000, guid: 5c09730d35f9a45fd8cd7f70c399cd83, type: 3}
+  Forest_sprite: {fileID: 21300000, guid: eff563ac086754bf783f130dbd5f1647, type: 3}
+  Jungle_sprite: {fileID: 21300000, guid: aa37e076fd3404c048f45d6a4f7ef430, type: 3}
   InfoOpen: 0
 --- !u!1 &1675325962
 GameObject:
