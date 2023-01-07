@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -58,15 +59,33 @@ public class PlanetNode : MonoBehaviour
         infoPanel.transform.localPosition = Vector3.zero;
 
         Image planetImage = infoPanel.transform.GetChild(1).gameObject.GetComponent<Image>();
-        TMP_Text planetName = infoPanel.transform.GetChild(2).gameObject.GetComponent<TMP_Text>();
-        TMP_Text environment = infoPanel.transform.GetChild(3).gameObject.GetComponent<TMP_Text>();
-        TMP_Text danger = infoPanel.transform.GetChild(4).gameObject.GetComponent<TMP_Text>();
-        TMP_Text reward = infoPanel.transform.GetChild(5).gameObject.GetComponent<TMP_Text>();
+        TMP_Text planetName = infoPanel.transform.Find("Planet Name").GetComponent<TMP_Text>();
+        TMP_Text environment = infoPanel.transform.Find("Environment").GetComponent<TMP_Text>();
+        TMP_Text danger = infoPanel.transform.Find("Danger Value").GetComponent<TMP_Text>();
+        TMP_Text reward = infoPanel.transform.Find("Resources").GetComponent<TMP_Text>();
 
         planetImage.sprite = mapManager.GetPlanetSprite(planetData.type);
         planetName.SetText(planetData.planetName);
         environment.SetText("Environment:\n" + planetData.environment);
-        danger.SetText("Danger Level:\n" + planetData.difficulty);
+        danger.SetText(planetData.difficulty);
+
+        if (planetData.difficulty == "Low")
+        {
+            danger.color = Color.green;
+        }
+        if (planetData.difficulty == "Moderate")
+        {
+            danger.color = Color.yellow;
+        }
+        if (planetData.difficulty == "High")
+        {
+            danger.color = new Color(255f / 255f, 102f / 255f, 0f / 255f);
+        }
+        if (Boss)
+        {
+            danger.color = Color.red;
+        }
+
         reward.SetText("Planet Resources:\n" + planetData.detailReward);
 
         if (Boss)

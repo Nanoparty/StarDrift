@@ -23,12 +23,14 @@ public class Player : MonoBehaviour
     
     private new Rigidbody2D rigidbody;
     private Slider hpSlider;
+    private CombatManager cm;
 
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
         enemyArrows = new List<GameObject>();
         hpSlider = GameObject.FindGameObjectWithTag("HP").GetComponent<Slider>();
+        cm = GameObject.Find("CombatManager").GetComponent<CombatManager>();
     }
 
     void Start()
@@ -42,6 +44,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (!cm.isStarted) return;
+
         HandleMovement();
         HandleWeapons();
         HandleDeath();

@@ -9,14 +9,30 @@ public class CombatManager : MonoBehaviour
     [SerializeField] private List<GameObject> Enemies;
     [SerializeField] private GameObject RewardCard;
     [SerializeField] private GameObject UI;
+    [SerializeField] private GameObject Alert;
 
     [SerializeField] private bool isBoss;
+    public bool isStarted;
 
     private GameObject rewards;
 
     private void Start()
     {
-        
+        if (isBoss)
+        {
+
+        }
+        else
+        {
+            GameObject alert = Instantiate(Alert, Vector3.zero, Quaternion.identity);
+            alert.transform.parent = UI.transform;
+            alert.transform.localPosition = Vector3.zero;
+            alert.GetComponentInChildren<Button>().onClick.AddListener(() =>
+            {
+                isStarted = true;
+                Destroy(alert);
+            });
+        }
     }
 
     private void Update()
@@ -34,8 +50,7 @@ public class CombatManager : MonoBehaviour
                 rewards = Instantiate(RewardCard, Vector3.zero, Quaternion.identity);
                 rewards.transform.parent = UI.transform;
                 rewards.transform.localPosition = Vector3.zero;
-                rewards.transform.Find("Buttons").transform.Find("Map").GetComponent<Button>()
-                    .onClick.AddListener(MapListener);
+                rewards.GetComponentInChildren<Button>().onClick.AddListener(MapListener);
             }
             
         }

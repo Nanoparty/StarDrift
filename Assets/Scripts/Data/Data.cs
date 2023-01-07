@@ -26,4 +26,7 @@ public static class Data
     public static int upgradesCollected = 2;
 
     public static int playerHealth;
+    public static string playerName;
+
+    public static List<string> pastNames;
 }

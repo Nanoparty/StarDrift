@@ -19,16 +19,19 @@ public class Enemy : MonoBehaviour
 
     private GameObject player;
     private new Rigidbody2D rigidbody;
+    private CombatManager cm;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         rigidbody = GetComponent<Rigidbody2D>();
+        cm = GameObject.Find("CombatManager").GetComponent<CombatManager>();
     }
 
     void Update()
     {
         if (player == null) return;
+        if (!cm.isStarted) return;
 
         HandleMovement();
         HandleDeath();

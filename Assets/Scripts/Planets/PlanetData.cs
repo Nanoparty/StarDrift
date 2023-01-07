@@ -50,22 +50,22 @@ public class PlanetData
 
     private void GenerateReward()
     {
-        int coin = UnityEngine.Random.Range(0, 10);
+        int coin = UnityEngine.Random.Range(0, 3);
 
-        if (coin <= 2)
+        if (coin == 0)
         {
-            reward = "Repair";
-            detailReward = "Repair Station";
+            reward = "Health";
+            detailReward = "Health Increase";
         }
-        else if (coin <= 8)
+        else if (coin == 1)
         {
-            reward = "Upgrade";
-            detailReward = "Advance Technology";
+            reward = "Damage";
+            detailReward = "Damage Increase";
         }
-        else if (coin == 9)
+        else if (coin == 2)
         {
-            reward = "Supplies";
-            reward = "Financial Reward";
+            reward = "Speed";
+            reward = "Speed Increase";
         }
     }
 

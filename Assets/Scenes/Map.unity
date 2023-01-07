@@ -146,7 +146,7 @@ PrefabInstance:
     - target: {fileID: 7267353678213449988, guid: 6f4efee39bcb44488bd5e30e2323d803, type: 3}
       propertyPath: PlanetInfoPrefab
       value: 
-      objectReference: {fileID: 1209000768394100376, guid: 4e49d55c5f5184ece9e5e43429634fb3, type: 3}
+      objectReference: {fileID: 2402309558082817567, guid: c9883ac4f4e137c4a9cff45d8568e250, type: 3}
     - target: {fileID: 7267353678213449988, guid: 6f4efee39bcb44488bd5e30e2323d803, type: 3}
       propertyPath: NextPlanets.Array.size
       value: 2
@@ -232,7 +232,7 @@ PrefabInstance:
     - target: {fileID: 7267353678213449988, guid: 6f4efee39bcb44488bd5e30e2323d803, type: 3}
       propertyPath: PlanetInfoPrefab
       value: 
-      objectReference: {fileID: 1209000768394100376, guid: 4e49d55c5f5184ece9e5e43429634fb3, type: 3}
+      objectReference: {fileID: 2402309558082817567, guid: c9883ac4f4e137c4a9cff45d8568e250, type: 3}
     - target: {fileID: 7267353678213449988, guid: 6f4efee39bcb44488bd5e30e2323d803, type: 3}
       propertyPath: NextPlanets.Array.size
       value: 1
@@ -319,7 +319,7 @@ PrefabInstance:
     - target: {fileID: 7267353678213449988, guid: 6f4efee39bcb44488bd5e30e2323d803, type: 3}
       propertyPath: PlanetInfoPrefab
       value: 
-      objectReference: {fileID: 1209000768394100376, guid: 4e49d55c5f5184ece9e5e43429634fb3, type: 3}
+      objectReference: {fileID: 2402309558082817567, guid: c9883ac4f4e137c4a9cff45d8568e250, type: 3}
     - target: {fileID: 7267353678213449988, guid: 6f4efee39bcb44488bd5e30e2323d803, type: 3}
       propertyPath: NextPlanets.Array.size
       value: 1
@@ -1215,7 +1215,7 @@ PrefabInstance:
     - target: {fileID: 7267353678213449988, guid: 6f4efee39bcb44488bd5e30e2323d803, type: 3}
       propertyPath: PlanetInfoPrefab
       value: 
-      objectReference: {fileID: 1209000768394100376, guid: 4e49d55c5f5184ece9e5e43429634fb3, type: 3}
+      objectReference: {fileID: 2402309558082817567, guid: c9883ac4f4e137c4a9cff45d8568e250, type: 3}
     - target: {fileID: 7267353678213449988, guid: 6f4efee39bcb44488bd5e30e2323d803, type: 3}
       propertyPath: NextPlanets.Array.size
       value: 1
@@ -1909,7 +1909,7 @@ PrefabInstance:
     - target: {fileID: 7267353678213449988, guid: 6f4efee39bcb44488bd5e30e2323d803, type: 3}
       propertyPath: PlanetInfoPrefab
       value: 
-      objectReference: {fileID: 1209000768394100376, guid: 4e49d55c5f5184ece9e5e43429634fb3, type: 3}
+      objectReference: {fileID: 2402309558082817567, guid: c9883ac4f4e137c4a9cff45d8568e250, type: 3}
     - target: {fileID: 7267353678213449988, guid: 6f4efee39bcb44488bd5e30e2323d803, type: 3}
       propertyPath: NextPlanets.Array.size
       value: 2
@@ -2420,7 +2420,7 @@ PrefabInstance:
     - target: {fileID: 7267353678213449988, guid: 6f4efee39bcb44488bd5e30e2323d803, type: 3}
       propertyPath: PlanetInfoPrefab
       value: 
-      objectReference: {fileID: 1209000768394100376, guid: 4e49d55c5f5184ece9e5e43429634fb3, type: 3}
+      objectReference: {fileID: 2402309558082817567, guid: c9883ac4f4e137c4a9cff45d8568e250, type: 3}
     - target: {fileID: 7267353678213449988, guid: 6f4efee39bcb44488bd5e30e2323d803, type: 3}
       propertyPath: NextPlanets.Array.size
       value: 2
@@ -2682,7 +2682,7 @@ PrefabInstance:
     - target: {fileID: 7267353678213449988, guid: 6f4efee39bcb44488bd5e30e2323d803, type: 3}
       propertyPath: PlanetInfoPrefab
       value: 
-      objectReference: {fileID: 1209000768394100376, guid: 4e49d55c5f5184ece9e5e43429634fb3, type: 3}
+      objectReference: {fileID: 2402309558082817567, guid: c9883ac4f4e137c4a9cff45d8568e250, type: 3}
     - target: {fileID: 7267353678213449988, guid: 6f4efee39bcb44488bd5e30e2323d803, type: 3}
       propertyPath: NextPlanets.Array.size
       value: 1
@@ -2853,7 +2853,7 @@ PrefabInstance:
     - target: {fileID: 7267353678213449988, guid: 6f4efee39bcb44488bd5e30e2323d803, type: 3}
       propertyPath: PlanetInfoPrefab
       value: 
-      objectReference: {fileID: 1209000768394100376, guid: 4e49d55c5f5184ece9e5e43429634fb3, type: 3}
+      objectReference: {fileID: 2402309558082817567, guid: c9883ac4f4e137c4a9cff45d8568e250, type: 3}
     - target: {fileID: 8373663314258359110, guid: 6f4efee39bcb44488bd5e30e2323d803, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -4094,7 +4094,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -308035057
-  m_SortingLayer: 6
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7973e4c758a734f9e886ba8c525b7e87, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4186,7 +4186,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -308035057
-  m_SortingLayer: 6
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: -1706333492, guid: c973d1c7d1c0a4e3b8b36fa8790e44a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4271,7 +4271,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -308035057
-  m_SortingLayer: 6
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: -1706333492, guid: c973d1c7d1c0a4e3b8b36fa8790e44a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4548,7 +4548,7 @@ PrefabInstance:
     - target: {fileID: 7267353678213449988, guid: 6f4efee39bcb44488bd5e30e2323d803, type: 3}
       propertyPath: PlanetInfoPrefab
       value: 
-      objectReference: {fileID: 1209000768394100376, guid: 4e49d55c5f5184ece9e5e43429634fb3, type: 3}
+      objectReference: {fileID: 2402309558082817567, guid: c9883ac4f4e137c4a9cff45d8568e250, type: 3}
     - target: {fileID: 7267353678213449988, guid: 6f4efee39bcb44488bd5e30e2323d803, type: 3}
       propertyPath: NextPlanets.Array.size
       value: 2

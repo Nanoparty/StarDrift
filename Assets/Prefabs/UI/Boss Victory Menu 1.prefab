@@ -728,7 +728,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2402309558082817566}
   m_Layer: 0
-  m_Name: VictoryMenu
+  m_Name: Boss Victory Menu 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
