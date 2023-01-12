@@ -10,6 +10,7 @@ TagManager:
   - Projectile
   - Coin
   - Boost
+  - HealthPack
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Enemy
   - Player
   - Coin
-  - 
+  - HealthPack
   - 
   - 
   - 
@@ -73,6 +74,9 @@ TagManager:
     locked: 0
   - name: Ship
     uniqueID: 3986932239
+    locked: 0
+  - name: Shield
+    uniqueID: 3959330343
     locked: 0
   - name: UI
     uniqueID: 4253456375

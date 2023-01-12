@@ -334,8 +334,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 50
   movementSpeed: 75
-  boostSpeed: 0
-  boostCooldown: 0
   maxVelocity: 2
   fireDelay: 5
   health: 1
@@ -346,7 +344,6 @@ MonoBehaviour:
   secondaryWeapon: {fileID: 0}
   canFirePrimary: 1
   canFireSecondary: 1
-  canBoost: 1
   enemyTags:
   - Player
   playerLayer:
@@ -354,6 +351,8 @@ MonoBehaviour:
     m_Bits: 128
   attackRange: 5
   coin: {fileID: 2836993382177039725, guid: 70fc0c9ebab84e345ab78584bbefda5b, type: 3}
+  healthpack: {fileID: 2836993382177039725, guid: 8f71a89a8677ce844849f814dfe0e525, type: 3}
+  healthPackChance: 20
   maxCoins: 10
   minCoins: 5
   coinForce: 20

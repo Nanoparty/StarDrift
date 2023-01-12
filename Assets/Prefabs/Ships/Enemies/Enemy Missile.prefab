@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -308035057
-  m_SortingLayer: 8
+  m_SortingLayer: 9
   m_SortingOrder: 0
   m_Sprite: {fileID: -1706333492, guid: c973d1c7d1c0a4e3b8b36fa8790e44a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -177,7 +177,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -308035057
-  m_SortingLayer: 8
+  m_SortingLayer: 9
   m_SortingOrder: 0
   m_Sprite: {fileID: -1706333492, guid: c973d1c7d1c0a4e3b8b36fa8790e44a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -286,7 +286,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -308035057
-  m_SortingLayer: 8
+  m_SortingLayer: 9
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 17f36608167ce40debfdfcf9859b8661, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -334,8 +334,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 50
   movementSpeed: 75
-  boostSpeed: 0
-  boostCooldown: 0
   maxVelocity: 2
   fireDelay: 5
   health: 1
@@ -346,13 +344,18 @@ MonoBehaviour:
   secondaryWeapon: {fileID: 0}
   canFirePrimary: 1
   canFireSecondary: 1
-  canBoost: 1
   enemyTags:
   - Player
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
   attackRange: 5
+  coin: {fileID: 0}
+  healthpack: {fileID: 2836993382177039725, guid: 8f71a89a8677ce844849f814dfe0e525, type: 3}
+  healthPackChance: 20
+  maxCoins: 0
+  minCoins: 0
+  coinForce: 0
 --- !u!61 &8151236070550240159
 BoxCollider2D:
   m_ObjectHideFlags: 0

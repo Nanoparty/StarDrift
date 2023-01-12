@@ -7,6 +7,8 @@ public class Enemy : Ship
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private float attackRange;
     [SerializeField] private GameObject coin;
+    [SerializeField] private GameObject healthpack;
+    [SerializeField] private float healthPackChance;
     [SerializeField] private int maxCoins;
     [SerializeField] private int minCoins;
     [SerializeField] private float coinForce;
@@ -86,12 +88,28 @@ public class Enemy : Ship
         }
     }
 
+    void DropHealthPack()
+    {
+        int num = Random.Range(0, 100);
+        if (num < healthPackChance)
+        {
+            GameObject coinObject = Instantiate(healthpack, transform.position, Quaternion.identity);
+            int x = Random.Range(-100, 100);
+            int y = Random.Range(-100, 100);
+            Vector2 dir = new Vector2(x, y);
+            dir.Normalize();
+            coinObject.GetComponent<Rigidbody2D>().AddForce(dir * coinForce * 2);
+            coinObject.transform.localScale = Vector3.one * 1.5f;
+        }
+    }
+
     void HandleDeath()
     {
         if (health <= 0)
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
             DropCoins();
+            DropHealthPack();
             Destroy(gameObject);
         }
     }

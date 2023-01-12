@@ -9,6 +9,7 @@ public class Player : Ship
     [SerializeField] private GameObject enemyArrow;
     [SerializeField] private float coinRange;
     [SerializeField] private LayerMask coinLayer;
+    [SerializeField] private LayerMask healthPackLayer;
     [SerializeField] private float coinForce;
 
     [SerializeField] private GameObject BoostTrail;
@@ -58,6 +59,7 @@ public class Player : Ship
         HandleWeapons();
         HandleDeath();
         PickupCoins();
+        PickupHealthPacks();
         HandleBoost();
     }
 
@@ -95,6 +97,19 @@ public class Player : Ship
             hit.rigidbody.AddForce(force * coinForce * Time.deltaTime);
         }
         
+    }
+
+    void PickupHealthPacks()
+    {
+        RaycastHit2D[] hits;
+        hits = Physics2D.CircleCastAll(transform.position, coinRange, Vector2.one, 0f, healthPackLayer);
+
+        foreach (RaycastHit2D hit in hits)
+        {
+            Vector2 force = new Vector2(transform.position.x, transform.position.y) - hit.point;
+            hit.rigidbody.AddForce(force * coinForce * Time.deltaTime);
+        }
+
     }
 
     void HandleMovement()
@@ -193,6 +208,13 @@ public class Player : Ship
     public override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);
+        hpSlider.value = health;
+    }
+
+    public void AddHealth(int h)
+    {
+        health += h;
+        if (health > maxHealth) health = maxHealth;
         hpSlider.value = health;
     }
 
