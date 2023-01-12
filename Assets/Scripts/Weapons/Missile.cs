@@ -29,7 +29,11 @@ public class Missile : Projectile
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(tag);
         GameObject target = GetNearest(enemies);
 
-        if (target == null) return;
+        if (target == null)
+        {
+            transform.position += GetDirection() * speed * Time.deltaTime;
+            return;
+        }
 
         Vector3 direction = (target.transform.position - transform.position).normalized;
 

@@ -11,9 +11,20 @@ public class Player : Ship
     [SerializeField] private LayerMask coinLayer;
     [SerializeField] private float coinForce;
 
+    [SerializeField] private GameObject BoostTrail;
+    [SerializeField] private float boost;
+    [SerializeField] private float maxBoost;
+    [SerializeField] private float boostRecharge;
+    [SerializeField] private float boostCost;
+    [SerializeField] private bool canBoost = true;
+    [SerializeField] private float boostSpeed;
+    [SerializeField] private float boostCooldown;
+    [SerializeField] private bool isRecharging = false;
+
     private List<GameObject> enemyArrows;
 
     private Slider hpSlider;
+    private Slider boostSlider;
     private int coins;
 
     private new void Awake()
@@ -21,6 +32,7 @@ public class Player : Ship
         base.Awake();
         enemyArrows = new List<GameObject>();
         hpSlider = GameObject.FindGameObjectWithTag("HP").GetComponent<Slider>();
+        boostSlider = GameObject.FindGameObjectWithTag("Boost").GetComponent<Slider>();
     }
 
     void Start()
@@ -30,6 +42,12 @@ public class Player : Ship
         hpSlider.maxValue = maxHealth;
         hpSlider.minValue = 0;
         hpSlider.value = health;
+
+        boostSlider.maxValue = maxBoost;
+        boostSlider.minValue = 0;
+        boostSlider.value = 100;
+
+        BoostTrail.SetActive(false);
     }
 
     void Update()
@@ -40,6 +58,7 @@ public class Player : Ship
         HandleWeapons();
         HandleDeath();
         PickupCoins();
+        HandleBoost();
     }
 
     void FixedUpdate()
@@ -102,16 +121,52 @@ public class Player : Ship
             rigidbody.AddForceAtPosition(force, transform.position);
 
         }
-        if (Input.GetKey(KeyCode.LeftShift))
+        
+    }
+
+    void HandleBoost()
+    {
+        if (Input.GetKey(KeyCode.LeftShift) && boost > (boostCost * Time.deltaTime))
         {
-            Debug.Log("Shift");
-            if (canBoost)
+            canBoost = false;
+            BoostTrail.SetActive(true);
+            Vector3 direction = GetDirection();
+            rigidbody.AddForceAtPosition(direction * boostSpeed * Time.deltaTime, transform.position);
+            boost -= boostCost * Time.deltaTime;
+        }
+        else
+        {
+            BoostTrail.SetActive(false);
+            if (!canBoost && !isRecharging)
             {
-                Debug.Log("Boost");
-                StartCoroutine(FireBoost());
-                canBoost = false;
+                StartCoroutine(BoostDelay());
+                isRecharging = true;
             }
         }
+
+        if (canBoost)
+        {
+            boost += boostRecharge * Time.deltaTime;
+        }
+        
+        if (boost > maxBoost) boost = maxBoost;
+
+        if (boost > 0)
+        {
+            boostSlider.value = boost;
+        }
+        else
+        {
+            boostSlider.value = 0;
+        }
+        
+    }
+
+    IEnumerator BoostDelay()
+    {
+        yield return new WaitForSeconds(boostCooldown);
+        canBoost = true;
+        isRecharging = false;
     }
 
     void HandleWeapons()

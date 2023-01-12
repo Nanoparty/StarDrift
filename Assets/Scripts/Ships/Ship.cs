@@ -6,8 +6,6 @@ public class Ship : MonoBehaviour
 {
     [SerializeField] protected float rotationSpeed;
     [SerializeField] protected float movementSpeed;
-    [SerializeField] protected float boostSpeed;
-    [SerializeField] protected float boostCooldown;
     [SerializeField] protected float maxVelocity;
     [SerializeField] protected float fireDelay;
     [SerializeField] protected float health;
@@ -20,7 +18,7 @@ public class Ship : MonoBehaviour
 
     [SerializeField] protected bool canFirePrimary = true;
     [SerializeField] protected bool canFireSecondary = true;
-    [SerializeField] protected bool canBoost = true;
+    
     [SerializeField] protected List<string> enemyTags;
 
     protected new Rigidbody2D rigidbody;
@@ -46,13 +44,13 @@ public class Ship : MonoBehaviour
         canFireSecondary = true;
     }
 
-    protected IEnumerator FireBoost()
-    {
-        Vector3 direction = GetDirection();
-        rigidbody.AddForceAtPosition(direction * boostSpeed * Time.deltaTime, transform.position);
-        yield return new WaitForSeconds(boostCooldown);
-        canBoost = true;
-    }
+    //protected IEnumerator FireBoost()
+    //{
+    //    Vector3 direction = GetDirection();
+    //    rigidbody.AddForceAtPosition(direction * boostSpeed * Time.deltaTime, transform.position);
+    //    yield return new WaitForSeconds(boostCooldown);
+    //    canBoost = true;
+    //}
 
     public virtual void TakeDamage(float damage)
     {

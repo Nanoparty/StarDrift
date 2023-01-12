@@ -9,6 +9,7 @@ TagManager:
   - Node
   - Projectile
   - Coin
+  - Boost
   layers:
   - Default
   - TransparentFX
