@@ -66,11 +66,17 @@ TagManager:
   - name: Coin
     uniqueID: 513799199
     locked: 0
+  - name: EnemyTrail
+    uniqueID: 397516889
+    locked: 0
   - name: Enemy
     uniqueID: 427688055
     locked: 0
   - name: Turret
     uniqueID: 956993095
+    locked: 0
+  - name: PlayerTrail
+    uniqueID: 3357518583
     locked: 0
   - name: Ship
     uniqueID: 3986932239
