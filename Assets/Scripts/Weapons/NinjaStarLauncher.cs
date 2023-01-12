@@ -2,17 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NinjaStarLauncher : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+[CreateAssetMenu(fileName = "NinjaStarLauncher", menuName = "ScriptableObjects/NinjaStarLauncher")]
 
-    // Update is called once per frame
-    void Update()
+public class NinjaStarLauncher : Weapon
+{
+    public override void Fire(Ship s, int aimVariation, List<string> tags)
     {
-        
+        GameObject laser = Instantiate(projectile, s.transform.position, s.transform.localRotation);
+        laser.GetComponent<Projectile>().SetTags(tags);
+        laser.GetComponent<Projectile>().SetDirection(s.GetDirectionVariable(aimVariation));
     }
 }

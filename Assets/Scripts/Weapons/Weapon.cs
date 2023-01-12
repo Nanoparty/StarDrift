@@ -8,7 +8,7 @@ public class Weapon : ScriptableObject
     [SerializeField] protected float fireDelay;
     [SerializeField] protected GameObject projectile;
 
-    public virtual void Fire(Player p) {
+    public virtual void Fire(Ship s, int aimVariation, List<string> tags) {
         Debug.Log("Fire Defalt");
     }
 

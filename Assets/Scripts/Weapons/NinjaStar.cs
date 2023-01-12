@@ -2,66 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NinjaStar : MonoBehaviour
+public class NinjaStar : Projectile
 {
-    [SerializeField] private float damage;
-    [SerializeField] private float speed;
-    [SerializeField] private List<string> targetTags;
-
-    private Vector3 direction;
-
-    // Speed at which the object moves
-    public float movementSpeed = 1f;
-
-    // Distance between each turn in the spiral
-    public float turnDistance = 1f;
-
-    // Rotation speed of the object
-    public float rotationSpeed = 90f;
-
-    // Current distance traveled by the object
-    private float distanceTraveled = 0f;
-
-    public void SetDirection(Vector3 d)
+    [SerializeField] private float rotationSpeed;
+    protected override void Update()
     {
-        direction = d;
+        Vector3 target = new Vector3(0, 0, rotationSpeed * Time.deltaTime);
+        //transform.Rotate(target);
+        transform.position += transform.TransformDirection(transform.TransformDirection(1,1,0) * speed * Time.deltaTime);
     }
 
-    void Update()
+    public Vector3 GetDirectionWithFixedOffset(int degrees)
     {
-        // Calculate the distance traveled this frame
-        float distance = movementSpeed * Time.deltaTime;
+        float radians = (transform.eulerAngles.z + 90 + degrees) * Mathf.Deg2Rad;
 
-        // Add the distance traveled to the total distance traveled
-        distanceTraveled += distance;
+        float x = Mathf.Cos(radians);
+        float y = Mathf.Sin(radians);
+        float z = transform.TransformDirection(Vector3.forward).z;
 
-        // If the distance traveled exceeds the turn distance, rotate the object and reset the distance traveled
-        if (distanceTraveled > turnDistance)
-        {
-            distanceTraveled = 0f;
-            transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
-        }
-
-        // Move the object forward
-        transform.position += new Vector3(1,1,0) * distance;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (targetTags.Contains(collision.tag))
-        {
-
-            if (collision.GetComponent<Enemy>() != null)
-            {
-                collision.GetComponent<Enemy>().TakeDamage(damage);
-            }
-
-            if (collision.GetComponent<Player>() != null)
-            {
-                collision.GetComponent<Player>().TakeDamage(damage);
-            }
-
-            Destroy(gameObject);
-        }
+        Vector3 direction = new Vector3(x, y, z).normalized;
+        return direction;
     }
 }

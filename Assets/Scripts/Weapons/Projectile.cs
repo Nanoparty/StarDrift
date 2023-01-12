@@ -15,32 +15,22 @@ public class Projectile : MonoBehaviour
         direction = d;
     }
 
-    protected void Update()
+    public void SetTags(List<string> tags)
+    {
+        targetTags = tags;
+    }
+
+    protected virtual void Update()
     {
         if (direction != null)
             transform.position += direction * speed * Time.deltaTime;
     }
 
-    protected void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (targetTags.Contains(collision.tag))
         {
-
-            if (collision.GetComponent<Enemy>() != null)
-            {
-                collision.GetComponent<Enemy>().TakeDamage(damage);
-            }
-
-            if (collision.GetComponent<Boss1>() != null)
-            {
-                collision.GetComponent<Boss1>().TakeDamage(damage);
-            }
-
-            if (collision.GetComponent<Player>() != null)
-            {
-                collision.GetComponent<Player>().TakeDamage(damage);
-            }
-
+            collision.GetComponent<Ship>().TakeDamage(damage);
             Destroy(gameObject);
         }
     }

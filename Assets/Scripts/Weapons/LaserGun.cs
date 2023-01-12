@@ -5,11 +5,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "LaserGun", menuName = "ScriptableObjects/LaserGun")]
 public class LaserGun : Weapon
 {
-    public override void Fire(Player p)
+    public override void Fire(Ship s, int aimVariation, List<string> tags)
     {
         Debug.Log("Fire");
-        GameObject laser = Instantiate(projectile, p.transform.position, p.transform.rotation);
-        laser.GetComponent<LaserShot>().SetDirection(p.GetDirection());
+        GameObject laser = Instantiate(projectile, s.transform.position, s.transform.rotation);
+        laser.GetComponent<Projectile>().SetTags(tags);
+        laser.GetComponent<Projectile>().SetDirection(s.GetDirectionVariable(aimVariation));
     }
     
 }

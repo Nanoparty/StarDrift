@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Icon: {fileID: 0}
   fireDelay: 0.6
-  projectile: {fileID: 1000312460237062993, guid: aae757eb2ca79493aa9966e42333c6f1, type: 3}
+  projectile: {fileID: 1000312460237062993, guid: 71040bb5626b8432c9deeb090a1b33a2, type: 3}

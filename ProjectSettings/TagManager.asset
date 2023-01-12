@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - HP
   - Node
+  - Projectile
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -14,9 +16,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Enemy
   - Player
-  - 
+  - Coin
   - 
   - 
   - 
@@ -58,6 +60,9 @@ TagManager:
     locked: 0
   - name: Planets
     uniqueID: 3140050937
+    locked: 0
+  - name: Coin
+    uniqueID: 513799199
     locked: 0
   - name: Enemy
     uniqueID: 427688055

@@ -58,7 +58,7 @@ public class PlanetNode : MonoBehaviour
         infoPanel.transform.position = Vector3.zero;
         infoPanel.transform.localPosition = Vector3.zero;
 
-        Image planetImage = infoPanel.transform.GetChild(1).gameObject.GetComponent<Image>();
+        Image planetImage = infoPanel.transform.Find("Planet Image").GetComponent<Image>();
         TMP_Text planetName = infoPanel.transform.Find("Planet Name").GetComponent<TMP_Text>();
         TMP_Text environment = infoPanel.transform.Find("Environment").GetComponent<TMP_Text>();
         TMP_Text danger = infoPanel.transform.Find("Danger Value").GetComponent<TMP_Text>();
@@ -90,7 +90,7 @@ public class PlanetNode : MonoBehaviour
 
         if (Boss)
         {
-            danger.SetText("Danger Level:\nExtreme");
+            danger.SetText("Extreme");
             reward.SetText("Planet Resources:\n?????");
         }
 

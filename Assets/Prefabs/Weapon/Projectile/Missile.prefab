@@ -10,13 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1000312460237063004}
   - component: {fileID: 1000312460237062994}
-  - component: {fileID: -6269780872175344263}
   - component: {fileID: 8767523673034481888}
   - component: {fileID: 12266298479092275}
   - component: {fileID: -802388102125227732}
+  - component: {fileID: 3197475350261631987}
+  - component: {fileID: 3078798460997450859}
   m_Layer: 0
   m_Name: Missile
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -308035057
-  m_SortingLayer: 4
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8d07b4d071ace48cebfaa769094fc60a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -88,22 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-6269780872175344263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000312460237062993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b740146a73b374922acc54c0a3744e52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
-  speed: 5
-  targetTags:
-  - Enemy
 --- !u!61 &8767523673034481888
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -137,12 +122,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000312460237062993}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e41fa3e19fee842dca29ae6342a30b9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifespan: 1
+  lifespan: 5
 --- !u!95 &-802388102125227732
 Animator:
   serializedVersion: 4
@@ -163,3 +148,43 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3197475350261631987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000312460237062993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73ab842770cea4f7f8685dbf468995a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
+  speed: 3
+  targetTags: []
+  rotationSpeed: 100
+  maxVelocity: 5
+  explosion: {fileID: 7188276497638862442, guid: d15746928478c4a81a146e1119ffbac5, type: 3}
+  lifespan: 4
+--- !u!50 &3078798460997450859
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000312460237062993}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

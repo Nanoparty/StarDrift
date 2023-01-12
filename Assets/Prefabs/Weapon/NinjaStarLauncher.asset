@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34b365fa875a34542860a7ec0d479371, type: 3}
+  m_Name: NinjaStarLauncher
+  m_EditorClassIdentifier: 
+  Icon: {fileID: 0}
+  fireDelay: 0.4
+  projectile: {fileID: 1000312460237062993, guid: 2e55ec95b0f0e4ecc9a064de93eb8379, type: 3}
